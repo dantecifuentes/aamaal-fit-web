@@ -270,9 +270,17 @@
     { id:8, name:'Calza Flare Retro', cat:'calzas', price:27990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.8, reviews:77, badge:'NUEVO', tone:'#2F3E2F', nuevo:true }
   ];
 
-  function ph(bg, label){
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="${bg}"/><text x="150" y="200" font-family="Inter, sans-serif" font-size="14" fill="#F7F5F2" text-anchor="middle" opacity="0.85">${label}</text></svg>`;
-    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  const PRODUCT_IMAGE_POOL = {
+    calzas: ['1546483875-ad9014c88eba','1571019613454-1cb2f99b2d8b','1649887974297-4be052375a67','1591258370814-01609b341790'],
+    petos: ['1548690312-e3b507d8c110','1550345332-09e3ac987658'],
+    conjuntos: ['1606902965551-dce093cda6e7','1434596922112-19c563067271','1645318800735-737d3a422de6'],
+    poleras: ['1508216310976-c518daae0cdc','1578470507807-3fc541d5f544','1596404129310-1ba3abeaed1e']
+  };
+  function unsplashUrl(id, w, h){ return `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&q=70`; }
+  function productImg(p, variant){
+    const pool = PRODUCT_IMAGE_POOL[p.cat] || PRODUCT_IMAGE_POOL.calzas;
+    const idx = (p.id + (variant === 'hover' ? 1 : 0)) % pool.length;
+    return unsplashUrl(pool[idx], 300, 400);
   }
   function clp(n){ return '$' + n.toLocaleString('es-CL'); }
 
@@ -311,8 +319,8 @@
     el.innerHTML = `
       <a href="producto.html?id=${p.id}" class="block relative aspect-[3/4] rounded overflow-hidden bg-support/20">
         ${p.badge ? `<span class="absolute top-3 left-3 z-10 bg-terracotta text-white text-[10px] font-archivo font-700 uppercase px-2 py-1 rounded">${p.badge}</span>` : ''}
-        <img class="swap-img img-a absolute inset-0 w-full h-full object-cover" src="${ph(p.tone, p.name)}" alt="${p.name}, color ${p.colors[0].n}, vista de producto">
-        <img class="swap-img img-b absolute inset-0 w-full h-full object-cover opacity-0" src="${ph('#14110F', p.name + ' en movimiento')}" alt="${p.name} puesta en modelo en movimiento">
+        <img class="swap-img img-a absolute inset-0 w-full h-full object-cover" src="${productImg(p,'static')}" alt="${p.name}, color ${p.colors[0].n}, vista de producto" loading="lazy">
+        <img class="swap-img img-b absolute inset-0 w-full h-full object-cover opacity-0" src="${productImg(p,'hover')}" alt="${p.name} puesta en modelo en movimiento" loading="lazy">
       </a>
       <div class="mt-3">
         <a href="producto.html?id=${p.id}" class="font-archivo font-700 text-sm uppercase leading-snug block hover:text-moss">${p.name}</a>
@@ -479,7 +487,7 @@
       const row = document.createElement('div');
       row.className = 'flex gap-3';
       row.innerHTML = `
-        <div class="w-16 h-20 rounded overflow-hidden shrink-0"><img src="${ph(p.tone, p.name)}" alt="${p.name}" class="w-full h-full object-cover"></div>
+        <div class="w-16 h-20 rounded overflow-hidden shrink-0"><img src="${productImg(p,'static')}" alt="${p.name}" class="w-full h-full object-cover"></div>
         <div class="flex-1">
           <p class="font-archivo font-700 text-sm">${p.name}</p>
           <p class="text-support text-xs mt-0.5">Talla ${item.size} · Cant. ${item.qty}</p>
@@ -505,7 +513,7 @@
       sugEl.innerHTML = `
         <p class="text-xs text-support uppercase font-archivo font-700 mb-2">Súmale esto a tu carro</p>
         <div class="flex gap-3 items-center">
-          <div class="w-12 h-16 rounded overflow-hidden shrink-0"><img src="${ph(suggestion.tone, suggestion.name)}" alt="${suggestion.name}" class="w-full h-full object-cover"></div>
+          <div class="w-12 h-16 rounded overflow-hidden shrink-0"><img src="${productImg(suggestion,'static')}" alt="${suggestion.name}" class="w-full h-full object-cover"></div>
           <div class="flex-1"><p class="text-sm font-archivo font-700">${suggestion.name}</p><p class="text-xs text-support">${clp(suggestion.price)}</p></div>
           <button data-add-suggestion="${suggestion.id}" class="text-xs border border-ink rounded px-3 py-2 font-archivo font-700 uppercase hover:bg-ink hover:text-white transition-colors">Agregar</button>
         </div>`;
