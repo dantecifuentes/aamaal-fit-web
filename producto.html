@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Producto — Aamaal Fit</title>
+<meta id="meta-desc" name="description" content="Ficha de producto Aamaal Fit: calce real, tela que no transparenta y medidas exactas por talla.">
+<meta id="og-title" property="og:title" content="Aamaal Fit">
+<meta id="og-desc" property="og:description" content="Ropa deportiva femenina con calce real.">
+<meta property="og:type" content="product">
+<meta property="og:locale" content="es_CL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { base:'#F7F5F2', ink:'#14110F', moss:'#2F3E2F', terracotta:'#C9603F', support:'#8C8580' },
+        fontFamily: { archivo:['Archivo','sans-serif'], inter:['Inter','sans-serif'] },
+        borderRadius: { sm:'4px', DEFAULT:'8px' }
+      }
+    }
+  };
+</script>
+<style>
+  body { font-family:'Inter', sans-serif; background:#F7F5F2; color:#14110F; }
+  h1,h2,h3,h4,.font-archivo { font-family:'Archivo', sans-serif; letter-spacing:-0.02em; }
+  :focus-visible { outline: 3px solid #2F3E2F; outline-offset: 2px; }
+  .no-scrollbar::-webkit-scrollbar{ display:none; }
+  .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
+  .panel { transition: transform 220ms ease; }
+  details > summary { list-style:none; }
+  details > summary::-webkit-details-marker { display:none; }
+  .accordion-icon { transition: transform 200ms ease; }
+  details[open] .accordion-icon { transform: rotate(45deg); }
+  .gallery-thumb.active { border-color:#14110F; }
+  .swap-img { transition: opacity 200ms ease; }
+  .prod-card:hover .img-b, .prod-card:focus-within .img-b { opacity:1; }
+  .prod-card:hover .img-a, .prod-card:focus-within .img-a { opacity:0; }
+  .snap-x { scroll-snap-type: x mandatory; }
+  .snap-x > * { scroll-snap-align: start; }
+  @media (max-width: 1023px){ .mobile-cart-pad { padding-bottom: 88px; } }
+</style>
+<script type="application/ld+json" id="product-jsonld"></script>
+</head>
+<body class="antialiased">
+
+<div class="bg-moss text-base text-center text-xs sm:text-sm font-medium py-2 px-4">Envío gratis sobre $45.000 · Retiro gratis en Temuco</div>
+
+<header class="sticky top-0 z-40 bg-base/95 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <button id="menu-toggle" class="lg:hidden p-2 -ml-2" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="index.html" class="font-archivo font-900 text-xl lg:text-2xl tracking-tight uppercase mx-auto lg:mx-0">Aamaal Fit</a>
+      <nav class="hidden lg:flex items-center gap-8 font-archivo font-700 text-sm uppercase" aria-label="Navegación principal">
+        <a href="tienda.html?cat=calzas" class="hover:text-moss transition-colors">Calzas</a>
+        <a href="tienda.html?cat=petos" class="hover:text-moss transition-colors">Petos y Tops</a>
+        <a href="tienda.html?cat=conjuntos" class="hover:text-moss transition-colors">Conjuntos</a>
+        <a href="tienda.html?cat=poleras" class="hover:text-moss transition-colors">Poleras y Polerones</a>
+        <a href="tienda.html?orden=nuevo" class="hover:text-moss transition-colors">Novedades</a>
+      </nav>
+      <div class="flex items-center gap-1 sm:gap-2">
+        <button id="search-toggle" class="p-2" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="search-bar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#14110F" stroke-width="2"/><path d="M21 21l-4-4" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button id="cart-toggle" class="relative p-2" aria-label="Abrir carro de compras" aria-controls="cart-drawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7h13l-1.5 9.5a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 4H2" stroke="#14110F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="#14110F"/><circle cx="17" cy="20" r="1.4" fill="#14110F"/></svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+    <div id="search-bar" class="hidden pb-4">
+      <form role="search" class="flex gap-2" onsubmit="return false;">
+        <label for="search-input" class="sr-only">Buscar productos</label>
+        <input id="search-input" type="search" placeholder="Buscar calzas, petos, conjuntos…" class="flex-1 border border-ink/20 rounded px-4 py-2.5 bg-white focus-visible:outline-moss">
+        <button type="submit" class="bg-moss text-white px-5 rounded font-archivo font-700 text-sm uppercase">Buscar</button>
+      </form>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="lg:hidden hidden border-t border-ink/10 bg-base" aria-label="Navegación móvil">
+    <ul class="px-6 py-4 space-y-1 font-archivo font-700 uppercase text-base">
+      <li><a href="tienda.html?cat=calzas" class="block py-2.5">Calzas</a></li>
+      <li><a href="tienda.html?cat=petos" class="block py-2.5">Petos y Tops</a></li>
+      <li><a href="tienda.html?cat=conjuntos" class="block py-2.5">Conjuntos</a></li>
+      <li><a href="tienda.html?cat=poleras" class="block py-2.5">Poleras y Polerones</a></li>
+      <li><a href="tienda.html?orden=nuevo" class="block py-2.5">Novedades</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="mobile-cart-pad">
+  <nav aria-label="Ruta de navegación" class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 text-xs text-support">
+    <a href="index.html" class="hover:text-ink">Inicio</a> / <a href="tienda.html" id="breadcrumb-cat" class="hover:text-ink">Tienda</a> / <span id="breadcrumb-name" class="text-ink"></span>
+  </nav>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 grid lg:grid-cols-2 gap-10">
+    <!-- GALERÍA -->
+    <div class="lg:flex lg:gap-4">
+      <div id="thumbs" class="hidden lg:flex flex-col gap-3 w-20 shrink-0" aria-label="Miniaturas de la galería"></div>
+      <div class="flex-1">
+        <div id="gallery-main" class="aspect-[3/4] rounded overflow-hidden bg-support/20 relative"></div>
+        <div id="thumbs-mobile" class="flex lg:hidden gap-3 overflow-x-auto no-scrollbar snap-x mt-3" aria-label="Miniaturas de la galería"></div>
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div>
+      <h1 id="p-name" class="font-archivo font-900 uppercase text-3xl sm:text-4xl"></h1>
+      <div class="flex items-center gap-3 mt-2">
+        <div id="p-stars" class="text-terracotta text-sm" aria-hidden="true"></div>
+        <a href="#resenas" id="p-reviews-link" class="text-support text-sm hover:text-ink underline"></a>
+      </div>
+      <div class="flex items-center gap-3 mt-4">
+        <span id="p-price" class="font-archivo font-800 text-3xl"></span>
+        <span id="p-compare" class="text-support line-through text-lg"></span>
+      </div>
+      <p id="p-savings" class="text-terracotta text-sm font-medium mt-1"></p>
+
+      <div class="mt-7">
+        <p class="font-archivo font-700 uppercase text-sm mb-2">Color: <span id="p-color-name" class="font-normal normal-case text-support"></span></p>
+        <div id="p-colors" class="flex gap-3" role="radiogroup" aria-label="Selecciona un color"></div>
+      </div>
+
+      <div class="mt-7">
+        <div class="flex items-center justify-between mb-2">
+          <p class="font-archivo font-700 uppercase text-sm">Talla</p>
+          <button id="open-size-guide" class="text-sm underline text-support hover:text-ink">Guía de tallas</button>
+        </div>
+        <div id="p-sizes" class="flex gap-3" role="radiogroup" aria-label="Selecciona una talla"></div>
+        <p id="size-warning" class="hidden text-terracotta text-sm mt-2">Elige una talla disponible para continuar.</p>
+      </div>
+
+      <button id="add-to-cart-desktop" class="hidden lg:block w-full mt-8 bg-moss text-white font-archivo font-700 uppercase text-sm px-8 py-4 rounded hover:bg-[#243024] transition-colors">Agregar al carro</button>
+
+      <p class="text-support text-sm mt-4 flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2F3E2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Retiro gratis en tienda (Temuco) disponible al pagar.
+      </p>
+
+      <!-- ACORDEÓN -->
+      <div class="mt-10 border-t border-ink/10">
+        <details class="border-b border-ink/10 py-4" open>
+          <summary class="flex items-center justify-between cursor-pointer font-archivo font-700 uppercase text-sm">Descripción<span class="accordion-icon text-xl">+</span></summary>
+          <p id="acc-desc" class="text-support mt-3 leading-relaxed"></p>
+        </details>
+        <details class="border-b border-ink/10 py-4">
+          <summary class="flex items-center justify-between cursor-pointer font-archivo font-700 uppercase text-sm">Tela y composición<span class="accordion-icon text-xl">+</span></summary>
+          <p id="acc-tela" class="text-support mt-3 leading-relaxed"></p>
+        </details>
+        <details class="border-b border-ink/10 py-4">
+          <summary class="flex items-center justify-between cursor-pointer font-archivo font-700 uppercase text-sm">Cuidados<span class="accordion-icon text-xl">+</span></summary>
+          <p class="text-support mt-3 leading-relaxed">Lavar con agua fría, ciclo suave. No usar cloro. Secar a la sombra, sin secadora. No planchar sobre estampados. Así conservas la recuperación elástica de la tela por más tiempo.</p>
+        </details>
+        <details class="border-b border-ink/10 py-4">
+          <summary class="flex items-center justify-between cursor-pointer font-archivo font-700 uppercase text-sm">Envíos y cambios<span class="accordion-icon text-xl">+</span></summary>
+          <p class="text-support mt-3 leading-relaxed">Envío gratis sobre $45.000 o retiro gratis en nuestra tienda de Av. Alemania 01665, Local 2, Temuco. Cambios de talla o color hasta 10 días corridos desde la recepción.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO DE PRUEBA -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="font-archivo font-700 uppercase text-terracotta text-sm tracking-wide mb-3">La prueba de esta prenda</p>
+        <h2 id="video-title" class="font-archivo font-900 uppercase text-3xl sm:text-4xl"></h2>
+        <p id="video-desc" class="text-support text-lg mt-4"></p>
+      </div>
+      <div id="video-block" class="aspect-[3/4] rounded relative flex items-center justify-center overflow-hidden" role="img">
+        <span class="absolute top-3 left-3 bg-white/90 text-ink text-[10px] font-archivo font-700 uppercase px-2 py-1 rounded">Prueba en video</span>
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="#F7F5F2" stroke-width="1.5"/><path d="M10 8l6 4-6 4V8z" fill="#F7F5F2"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section id="resenas" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-ink/10">
+    <h2 class="font-archivo font-900 uppercase text-3xl sm:text-4xl mb-8">Reseñas</h2>
+    <div class="grid lg:grid-cols-[280px_1fr] gap-10">
+      <div>
+        <div class="flex items-baseline gap-2">
+          <span id="rev-avg" class="font-archivo font-900 text-5xl"></span>
+          <span class="text-support">/ 5</span>
+        </div>
+        <div id="rev-stars-big" class="text-terracotta text-lg mt-1"></div>
+        <p id="rev-count" class="text-support text-sm mt-1"></p>
+        <div id="rev-bars" class="mt-5 space-y-1.5"></div>
+      </div>
+      <div id="rev-list" class="space-y-6"></div>
+    </div>
+  </section>
+
+  <!-- COMPLETA EL LOOK -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-ink/10">
+    <h2 class="font-archivo font-900 uppercase text-3xl sm:text-4xl mb-8">Completa el look</h2>
+    <div id="related-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+  </section>
+</main>
+
+<footer class="border-t border-ink/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <p class="font-archivo font-900 uppercase text-lg mb-4">Aamaal Fit</p>
+      <p class="text-support text-sm">Ropa deportiva femenina con calce real, hecha para entrenar en Chile. Av. Alemania 01665, Local 2, Temuco.</p>
+    </div>
+    <div>
+      <p class="font-archivo font-700 uppercase text-sm mb-4">Navegación</p>
+      <ul class="space-y-2 text-support text-sm">
+        <li><a href="tienda.html?cat=calzas" class="hover:text-ink">Calzas</a></li>
+        <li><a href="tienda.html?cat=petos" class="hover:text-ink">Petos y Tops</a></li>
+        <li><a href="tienda.html?cat=conjuntos" class="hover:text-ink">Conjuntos</a></li>
+        <li><a href="tienda.html?cat=poleras" class="hover:text-ink">Poleras y Polerones</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-archivo font-700 uppercase text-sm mb-4">Ayuda</p>
+      <ul class="space-y-2 text-support text-sm">
+        <li><button data-open-legal="envios" class="hover:text-ink text-left">Envíos</button></li>
+        <li><button data-open-legal="cambios" class="hover:text-ink text-left">Cambios y devoluciones</button></li>
+        <li><button data-open-legal="terminos" class="hover:text-ink text-left">Términos y condiciones</button></li>
+        <li><button id="footer-size-guide" class="hover:text-ink text-left">Guía de tallas</button></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-archivo font-700 uppercase text-sm mb-4">Síguenos</p>
+      <ul class="space-y-2 text-support text-sm">
+        <li><a href="https://www.instagram.com/aamaalfit/" target="_blank" rel="noopener" class="hover:text-ink">Instagram</a></li>
+        <li><a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="hover:text-ink">WhatsApp</a></li>
+      </ul>
+      <p class="font-archivo font-700 uppercase text-sm mt-6 mb-2">Medios de pago</p>
+      <p class="text-support text-sm">Webpay · Tarjetas de crédito y débito · Transferencia</p>
+    </div>
+  </div>
+  <div class="border-t border-ink/10 py-6 text-center text-support text-xs"><p>© 2026 Aamaal Fit. Temuco, Chile.</p></div>
+</footer>
+
+<!-- BARRA FIJA MÓVIL -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-base border-t border-ink/10 p-3">
+  <button id="add-to-cart-mobile" class="w-full bg-moss text-white font-archivo font-700 uppercase text-sm px-8 py-4 rounded">Agregar al carro</button>
+</div>
+
+<!-- MODAL GUÍA DE TALLAS -->
+<div id="size-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-ink/60">
+  <div class="bg-base rounded max-w-lg w-full max-h-[85vh] overflow-y-auto p-8 relative" role="dialog" aria-modal="true" aria-labelledby="size-modal-title">
+    <button id="close-size-guide" aria-label="Cerrar guía de tallas" class="absolute top-4 right-4 p-1">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <h3 id="size-modal-title" class="font-archivo font-900 uppercase text-2xl mb-4">Guía de tallas</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead><tr class="border-b border-ink/20 font-archivo font-700 uppercase text-xs">
+          <th class="py-2">Talla</th><th class="py-2">Cintura</th><th class="py-2">Cadera</th><th class="py-2">Largo</th>
+        </tr></thead>
+        <tbody>
+          <tr class="border-b border-ink/10"><td class="py-2 font-archivo font-700">S</td><td class="py-2">62-68 cm</td><td class="py-2">88-94 cm</td><td class="py-2">92 cm</td></tr>
+          <tr><td class="py-2 font-archivo font-700">M</td><td class="py-2">69-75 cm</td><td class="py-2">95-101 cm</td><td class="py-2">94 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-support text-sm mt-5">La modelo mide 1,65 m y usa talla S.</p>
+    <p class="text-support text-sm mt-2">Mide sobre tu ropa interior, con una cinta métrica sin apretar. Si estás entre dos medidas, te recomendamos la talla mayor.</p>
+  </div>
+</div>
+
+<div id="legal-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-ink/60">
+  <div class="bg-base rounded max-w-lg w-full max-h-[80vh] overflow-y-auto p-8 relative" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <button data-close-legal aria-label="Cerrar" class="absolute top-4 right-4 p-1">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <h3 id="legal-title" class="font-archivo font-900 uppercase text-2xl mb-4"></h3>
+    <div id="legal-body" class="text-support space-y-3 text-sm leading-relaxed"></div>
+  </div>
+</div>
+
+<div id="cart-overlay" class="hidden fixed inset-0 bg-ink/50 z-50"></div>
+<aside id="cart-drawer" class="panel fixed top-0 right-0 h-full w-full sm:w-[420px] bg-base z-50 translate-x-full shadow-2xl flex flex-col" aria-label="Carro de compras" role="dialog" aria-modal="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-ink/10">
+    <h2 class="font-archivo font-800 uppercase text-lg">Tu carro</h2>
+    <button id="cart-close" aria-label="Cerrar carro" class="p-1">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="px-6 py-4 border-b border-ink/10">
+    <p id="shipping-msg" class="text-sm font-medium mb-2"></p>
+    <div class="h-2 bg-ink/10 rounded-full overflow-hidden"><div id="shipping-bar" class="h-full bg-moss rounded-full transition-all duration-300" style="width:0%"></div></div>
+    <p class="text-xs text-support mt-2">También puedes elegir <strong>retiro gratis en tienda (Temuco)</strong> al pagar.</p>
+  </div>
+  <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-4 space-y-4"></div>
+  <div id="cart-suggestion" class="px-6 py-4 border-t border-ink/10"></div>
+  <div class="px-6 py-5 border-t border-ink/10">
+    <div class="flex justify-between font-archivo font-800 text-lg mb-4"><span>Subtotal</span><span id="cart-subtotal">$0</span></div>
+    <a href="tienda.html" class="block text-center bg-moss text-white font-archivo font-700 uppercase text-sm px-8 py-4 rounded hover:bg-[#243024] transition-colors">Ir a pagar</a>
+  </div>
+</aside>
+
+<a href="https://wa.me/56912345678?text=Hola%2C%20tengo%20una%20consulta%20sobre%20Aamaal%20Fit" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="fixed bottom-24 lg:bottom-5 right-5 z-40 bg-moss text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#243024] transition-colors">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" stroke="white" stroke-width="1.6"/><path d="M8.5 8.7c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.1-.3.3-.4.4-.1.1-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.9-.2 1.7-.3.8-1.7 1.5-2.3 1.6-.6.1-1.3.1-2.1-.1-.5-.1-1.1-.3-1.9-.7-3.3-1.4-5.4-4.7-5.6-4.9-.2-.2-1.3-1.7-1.3-3.3 0-1.6.8-2.3 1.1-2.6z" fill="white"/></svg>
+</a>
+
+<script>
+(function(){
+  const FREE_SHIPPING = 45000;
+
+  const PRODUCTS = [
+    { id:1, name:'Calza Legging Alta Compresión', cat:'calzas', catLabel:'Calzas', price:24990, compareAt:null,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'},{n:'Terracota',hex:'#C9603F'}], sizes:{S:true,M:true}, rating:4.8, reviews:126, tone:'#2F3E2F',
+      desc:'Nuestra calza más vendida. Compresión media-alta que sostiene sin marcar, con costuras planas que no rozan. Pensada para sentadillas, spinning y uso diario.',
+      tela:'92% poliamida reciclada, 8% elastano. Tela de doble capa en zona de glúteos y entrepierna, absorbente, de secado rápido y con recuperación elástica.',
+      videoTitle:'Sentadilla profunda, sin sorpresas', videoDesc:'Grabamos esta calza en sentadilla profunda bajo luz directa de estudio. La doble capa hace su trabajo.' },
+    { id:2, name:'Calza 7/8 Bolsillo Lateral', cat:'calzas', catLabel:'Calzas', price:26990, compareAt:null,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Grafito',hex:'#3A3733'}], sizes:{S:true,M:true}, rating:4.7, reviews:98, tone:'#3A3733',
+      desc:'Largo 7/8 con bolsillo lateral con cierre para el celular. Pretina ancha que no se enrolla en sentadillas ni burpees.',
+      tela:'88% poliéster, 12% elastano. Tela técnica absorbente, de secado rápido, con recuperación elástica y sin transparencia en movimiento.',
+      videoTitle:'La pretina que no se enrolla', videoDesc:'Probamos esta calza en una serie completa de burpees. La pretina se mantiene en su lugar de principio a fin.' },
+    { id:3, name:'Peto Deportivo Alto Soporte', cat:'petos', catLabel:'Petos y Tops', price:15990, compareAt:null,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Terracota',hex:'#C9603F'},{n:'Beige',hex:'#D8CFC2'}], sizes:{S:true,M:false}, rating:4.9, reviews:210, tone:'#C9603F',
+      desc:'Peto de soporte alto para entrenamiento de impacto. Tirantes anchos ajustables y banda inferior de silicona que fija sin apretar.',
+      tela:'80% poliamida, 20% elastano. Tela absorbente con recuperación elástica y compresión firme.',
+      videoTitle:'Soporte real en salto', videoDesc:'Filmamos este peto en una serie de saltos y burpees consecutivos para mostrar el sostén real.' },
+    { id:4, name:'Top Cruzado Espalda', cat:'petos', catLabel:'Petos y Tops', price:13990, compareAt:null,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.6, reviews:64, tone:'#8C8580',
+      desc:'Top de soporte medio con espalda cruzada. Ideal para yoga, pilates y entrenamiento funcional de bajo impacto.',
+      tela:'85% poliamida, 15% elastano. Tela suave, absorbente y de secado rápido.',
+      videoTitle:'Libertad de movimiento total', videoDesc:'Mostramos este top en una secuencia de estiramientos de brazos y espalda sin restricción.' },
+    { id:5, name:'Conjunto Peto + Calza Esencial', cat:'conjuntos', catLabel:'Conjuntos', price:38990, compareAt:42980,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.9, reviews:150, tone:'#14110F',
+      desc:'El set completo: peto de soporte alto y calza de compresión media-alta, en la misma tela y color. Comprado por separado cuesta $42.980; en conjunto ahorras $3.990.',
+      tela:'90% poliamida, 10% elastano en ambas piezas. Tela de doble capa, absorbente y con recuperación elástica.',
+      videoTitle:'El set puesto a prueba completo', videoDesc:'Peto y calza juntos, en sentadilla y salto, sin transparencia y sin que la pretina se enrolle.' },
+    { id:6, name:'Polera Técnica Manga Corta', cat:'poleras', catLabel:'Poleras y Polerones', price:17990, compareAt:null,
+      colors:[{n:'Hueso',hex:'#D8CFC2'},{n:'Negro',hex:'#14110F'},{n:'Terracota',hex:'#C9603F'}], sizes:{S:false,M:true}, rating:4.5, reviews:40, tone:'#8C8580',
+      desc:'Polera técnica de corte holgado para entrenar o para el día a día. Tela liviana que no se pega al cuerpo con el sudor.',
+      tela:'100% poliéster reciclado. Tela absorbente y de secado rápido, con tratamiento antiolor.',
+      videoTitle:'Seca en minutos', videoDesc:'Mojamos esta polera y mostramos cómo la humedad se distribuye y se seca en minutos.' },
+    { id:7, name:'Polerón Oversize Algodón Peinado', cat:'poleras', catLabel:'Poleras y Polerones', price:29990, compareAt:null,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Gris',hex:'#8C8580'}], sizes:{S:true,M:true}, rating:4.7, reviews:55, tone:'#3A3733',
+      desc:'Polerón oversize de algodón peinado con interior afelpado. Para el after-training o para el uso diario.',
+      tela:'80% algodón peinado, 20% poliéster. Interior afelpado, no transparenta con la luz.',
+      videoTitle:'Abrigo real, sin transparencias', videoDesc:'Mostramos el polerón bajo luz de contraste para comprobar que no transparenta la ropa interior.' },
+    { id:8, name:'Calza Flare Retro', cat:'calzas', catLabel:'Calzas', price:27990, compareAt:null,
+      colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.8, reviews:77, tone:'#2F3E2F',
+      desc:'Calza de corte flare con pretina alta. El mismo calce firme de siempre, con una pierna más suelta desde la rodilla.',
+      tela:'90% poliamida, 10% elastano. Tela de doble capa, con recuperación elástica y secado rápido.',
+      videoTitle:'Flare en movimiento', videoDesc:'Grabamos esta calza en sentadilla y estocada para mostrar cómo se mueve la pierna flare sin transparentar.' }
+  ];
+
+  const REVIEWS_POOL = [
+    {name:'Valentina M.', stars:5, text:'La compresión es real, no se transparenta ni con flash de cámara. Mi favorita para entrenar.'},
+    {name:'Antonia G.', stars:5, text:'Pedí talla S guiándome por la tabla de medidas y me quedó perfecta, sin tener que devolver nada.'},
+    {name:'Josefina T.', stars:4, text:'Muy buena tela, se siente firme. Le bajo una estrella porque me gustaría que sumaran más colores.'},
+    {name:'Constanza L.', stars:5, text:'Retiré en la tienda de Temuco el mismo día. La atención fue súper cercana.'}
+  ];
+
+  function ph(bg, label){
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="${bg}"/><text x="150" y="200" font-family="Inter, sans-serif" font-size="14" fill="#F7F5F2" text-anchor="middle" opacity="0.85">${label}</text></svg>`;
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  }
+  function phGallery(bg, label){
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="${bg}"/><foreignObject x="16" y="170" width="268" height="60"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Inter,sans-serif;font-size:13px;color:#F7F5F2;opacity:.85;text-align:center;line-height:1.3;">${label}</div></foreignObject></svg>`;
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  }
+  function clp(n){ return '$' + n.toLocaleString('es-CL'); }
+  function stars(rating){
+    const full = Math.round(rating);
+    return '★'.repeat(full) + '☆'.repeat(5-full);
+  }
+
+  const params = new URLSearchParams(location.search);
+  const productId = parseInt(params.get('id')) || 1;
+  const product = PRODUCTS.find(p=>p.id===productId) || PRODUCTS[0];
+  let selectedColor = product.colors[0].n;
+  let selectedSize = null;
+
+  /* ---------- SEO / TITLE / JSON-LD ---------- */
+  document.getElementById('page-title').textContent = `${product.name} — Aamaal Fit`;
+  document.getElementById('meta-desc').setAttribute('content', `${product.name}: ${product.desc.slice(0,110)}`);
+  document.getElementById('og-title').setAttribute('content', `${product.name} | Aamaal Fit`);
+  document.getElementById('og-desc').setAttribute('content', product.desc);
+  document.getElementById('product-jsonld').textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name": product.name,
+    "description": product.desc,
+    "brand": { "@type":"Brand", "name":"Aamaal Fit" },
+    "offers": {
+      "@type":"Offer",
+      "priceCurrency":"CLP",
+      "price": product.price,
+      "availability": (product.sizes.S || product.sizes.M) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "url": location.href
+    },
+    "aggregateRating": {
+      "@type":"AggregateRating",
+      "ratingValue": product.rating,
+      "reviewCount": product.reviews
+    }
+  });
+
+  /* ---------- BREADCRUMB ---------- */
+  document.getElementById('breadcrumb-cat').textContent = product.catLabel;
+  document.getElementById('breadcrumb-cat').href = `tienda.html?cat=${product.cat}`;
+  document.getElementById('breadcrumb-name').textContent = product.name;
+
+  /* ---------- INFO BÁSICA ---------- */
+  document.getElementById('p-name').textContent = product.name;
+  document.getElementById('p-stars').textContent = stars(product.rating);
+  document.getElementById('p-stars').setAttribute('aria-label', `${product.rating} de 5 estrellas`);
+  document.getElementById('p-reviews-link').textContent = `${product.reviews} reseñas`;
+  document.getElementById('p-price').textContent = clp(product.price);
+  if(product.compareAt){
+    document.getElementById('p-compare').textContent = clp(product.compareAt);
+    document.getElementById('p-savings').textContent = `Ahorras ${clp(product.compareAt - product.price)} comprando el set`;
+  }
+  document.getElementById('acc-desc').textContent = product.desc;
+  document.getElementById('acc-tela').textContent = product.tela;
+  document.getElementById('video-title').textContent = product.videoTitle;
+  document.getElementById('video-desc').textContent = product.videoDesc;
+  document.getElementById('video-block').style.background = product.tone;
+  document.getElementById('video-block').setAttribute('aria-label', `Video de prueba de transparencia de ${product.name}`);
+
+  /* ---------- GALERÍA ---------- */
+  function galleryImages(colorName){
+    const shots = ['Frente','Espalda','Detalle de tela','Sentadilla','Perfil','En movimiento'];
+    return shots.map(s => phGallery(product.tone, `${colorName} — ${s}`));
+  }
+  let currentImages = galleryImages(selectedColor);
+  let currentIndex = 0;
+
+  function renderGallery(){
+    const main = document.getElementById('gallery-main');
+    main.innerHTML = `<img src="${currentImages[currentIndex]}" alt="${product.name} color ${selectedColor}, vista ${currentIndex+1} de ${currentImages.length}" class="w-full h-full object-cover">`;
+    ['thumbs','thumbs-mobile'].forEach(id=>{
+      const c = document.getElementById(id);
+      c.innerHTML = currentImages.map((src, i)=>`
+        <button data-thumb="${i}" class="gallery-thumb border-2 ${i===currentIndex?'active':'border-transparent'} rounded overflow-hidden shrink-0 ${id==='thumbs-mobile' ? 'w-20 snap-start' : 'w-full'} aspect-[3/4]" aria-label="Ver foto ${i+1} de ${product.name}">
+          <img src="${src}" alt="" class="w-full h-full object-cover">
+        </button>`).join('');
+      c.querySelectorAll('[data-thumb]').forEach(b=>b.addEventListener('click', ()=>{
+        currentIndex = parseInt(b.dataset.thumb); renderGallery();
+      }));
+    });
+  }
+
+  /* ---------- COLORES ---------- */
+  const colorsEl = document.getElementById('p-colors');
+  function renderColors(){
+    colorsEl.innerHTML = product.colors.map(c=>`
+      <button role="radio" aria-checked="${c.n===selectedColor}" data-color="${c.n}" aria-label="Color ${c.n}"
+        class="w-9 h-9 rounded-full border-2 ${c.n===selectedColor ? 'border-ink' : 'border-transparent'} ring-1 ring-ink/15" style="background:${c.hex}"></button>`).join('');
+    document.getElementById('p-color-name').textContent = selectedColor;
+    colorsEl.querySelectorAll('[data-color]').forEach(b=>b.addEventListener('click', ()=>{
+      selectedColor = b.dataset.color;
+      currentImages = galleryImages(selectedColor);
+      currentIndex = 0;
+      renderColors();
+      renderGallery();
+    }));
+  }
+
+  /* ---------- TALLAS ---------- */
+  const sizesEl = document.getElementById('p-sizes');
+  function renderSizes(){
+    sizesEl.innerHTML = Object.keys(product.sizes).map(s=>`
+      <button role="radio" aria-checked="${s===selectedSize}" data-size="${s}" ${!product.sizes[s] ? 'aria-disabled="true"' : ''}
+        class="w-14 h-14 rounded border font-archivo font-700 text-sm uppercase transition-colors
+        ${!product.sizes[s] ? 'border-ink/15 text-support line-through cursor-not-allowed' : (s===selectedSize ? 'bg-ink text-white border-ink' : 'border-ink/30 hover:border-ink')}">${s}</button>`).join('');
+    sizesEl.querySelectorAll('[data-size]').forEach(b=>{
+      if(b.classList.contains('cursor-not-allowed')) return;
+      b.addEventListener('click', ()=>{
+        selectedSize = b.dataset.size;
+        document.getElementById('size-warning').classList.add('hidden');
+        renderSizes();
+      });
+    });
+  }
+
+  renderGallery(); renderColors(); renderSizes();
+
+  /* ---------- RESEÑAS ---------- */
+  document.getElementById('rev-avg').textContent = product.rating.toFixed(1);
+  document.getElementById('rev-stars-big').textContent = stars(product.rating);
+  document.getElementById('rev-count').textContent = `Basado en ${product.reviews} reseñas`;
+  const dist = [ {s:5,pct:68},{s:4,pct:20},{s:3,pct:8},{s:2,pct:3},{s:1,pct:1} ];
+  document.getElementById('rev-bars').innerHTML = dist.map(d=>`
+    <div class="flex items-center gap-2 text-xs">
+      <span class="w-8 text-support">${d.s}★</span>
+      <div class="flex-1 h-1.5 bg-ink/10 rounded-full overflow-hidden"><div class="h-full bg-terracotta" style="width:${d.pct}%"></div></div>
+      <span class="w-8 text-support text-right">${d.pct}%</span>
+    </div>`).join('');
+  document.getElementById('rev-list').innerHTML = REVIEWS_POOL.map(r=>`
+    <div class="border-b border-ink/10 pb-6">
+      <div class="flex items-center justify-between mb-1">
+        <p class="font-archivo font-700">${r.name}</p>
+        <div class="text-terracotta text-sm" aria-label="${r.stars} de 5 estrellas">${stars(r.stars)}</div>
+      </div>
+      <p class="text-support">${r.text}</p>
+    </div>`).join('');
+
+  /* ---------- COMPLETA EL LOOK ---------- */
+  function productCard(p){
+    const el = document.createElement('article');
+    el.className = 'prod-card';
+    el.innerHTML = `
+      <a href="producto.html?id=${p.id}" class="block relative aspect-[3/4] rounded overflow-hidden bg-support/20">
+        <img class="swap-img img-a absolute inset-0 w-full h-full object-cover" src="${ph(p.tone, p.name)}" alt="${p.name}, color ${p.colors[0].n}">
+        <img class="swap-img img-b absolute inset-0 w-full h-full object-cover opacity-0" src="${ph('#14110F', p.name + ' en movimiento')}" alt="${p.name} puesta en modelo en movimiento">
+      </a>
+      <div class="mt-3">
+        <a href="producto.html?id=${p.id}" class="font-archivo font-700 text-sm uppercase leading-snug block hover:text-moss">${p.name}</a>
+        <span class="font-archivo font-800">${clp(p.price)}</span>
+      </div>`;
+    return el;
+  }
+  const related = PRODUCTS.filter(p=>p.id!==product.id && (p.cat===product.cat || p.cat==='conjuntos')).slice(0,3);
+  const fallbackRelated = related.length < 3 ? PRODUCTS.filter(p=>p.id!==product.id && !related.includes(p)).slice(0, 3-related.length) : [];
+  document.getElementById('related-grid').append(...[...related, ...fallbackRelated].map(productCard));
+
+  /* ---------- GUÍA DE TALLAS ---------- */
+  const sizeModal = document.getElementById('size-modal');
+  function openSizeGuide(){ sizeModal.classList.remove('hidden'); sizeModal.classList.add('flex'); }
+  function closeSizeGuide(){ sizeModal.classList.add('hidden'); sizeModal.classList.remove('flex'); }
+  document.getElementById('open-size-guide').addEventListener('click', openSizeGuide);
+  document.getElementById('footer-size-guide').addEventListener('click', openSizeGuide);
+  document.getElementById('close-size-guide').addEventListener('click', closeSizeGuide);
+  sizeModal.addEventListener('click', e=>{ if(e.target===sizeModal) closeSizeGuide(); });
+  if(location.hash === '#guia-tallas') openSizeGuide();
+
+  /* ---------- LEGAL MODAL ---------- */
+  const legalContent = {
+    envios: ['Envíos', `<p>Despachamos a todo Chile a través de courier con seguimiento.</p><p><strong>Envío gratis</strong> en compras sobre $45.000. Bajo ese monto, el costo se calcula según tu comuna al finalizar la compra.</p><p>También puedes elegir <strong>retiro gratis</strong> en nuestra tienda de Av. Alemania 01665, Local 2, Temuco.</p>`],
+    cambios: ['Cambios y devoluciones', `<p>Tienes <strong>10 días corridos</strong> desde que recibes tu pedido para solicitar un cambio de talla o color.</p><p>La prenda debe estar sin uso, con etiquetas y en su empaque original.</p>`],
+    terminos: ['Términos y condiciones', `<p>Los precios publicados están expresados en pesos chilenos e incluyen IVA.</p><p>Las imágenes de este sitio son representativas del producto; el color puede variar levemente según la pantalla.</p>`]
+  };
+  const legalModal = document.getElementById('legal-modal');
+  document.querySelectorAll('[data-open-legal]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const [title, body] = legalContent[btn.dataset.openLegal];
+      document.getElementById('legal-title').textContent = title;
+      document.getElementById('legal-body').innerHTML = body;
+      legalModal.classList.remove('hidden'); legalModal.classList.add('flex');
+    });
+  });
+  document.querySelectorAll('[data-close-legal]').forEach(b=>b.addEventListener('click', ()=>{ legalModal.classList.add('hidden'); legalModal.classList.remove('flex'); }));
+  legalModal.addEventListener('click', e=>{ if(e.target===legalModal){ legalModal.classList.add('hidden'); legalModal.classList.remove('flex'); }});
+
+  /* ---------- MENU / BÚSQUEDA ---------- */
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  menuToggle.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('hidden') === false;
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  const searchToggle = document.getElementById('search-toggle');
+  const searchBar = document.getElementById('search-bar');
+  searchToggle.addEventListener('click', ()=>{
+    const open = searchBar.classList.toggle('hidden') === false;
+    searchToggle.setAttribute('aria-expanded', open);
+    if(open) document.getElementById('search-input').focus();
+  });
+
+  /* ---------- CART ---------- */
+  const CART_KEY = 'aamaal_cart';
+  function getCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
+  function setCart(c){ localStorage.setItem(CART_KEY, JSON.stringify(c)); renderCart(); }
+  function addToCart(id, size){
+    const cart = getCart();
+    const existing = cart.find(i=>i.id===id && i.size===size);
+    if(existing) existing.qty += 1; else cart.push({id, size, qty:1});
+    setCart(cart);
+    openCart();
+  }
+  function removeFromCart(idx){ const cart = getCart(); cart.splice(idx,1); setCart(cart); }
+
+  function renderCart(){
+    const cart = getCart();
+    const itemsEl = document.getElementById('cart-items');
+    document.getElementById('cart-count').textContent = cart.reduce((a,i)=>a+i.qty,0);
+    let subtotal = 0;
+    itemsEl.innerHTML = '';
+    if(cart.length===0){
+      itemsEl.innerHTML = `<p class="text-support text-center py-10">Tu carro está vacío.<br><a href="tienda.html" class="text-moss underline">Ver la tienda</a></p>`;
+    }
+    cart.forEach((item, idx)=>{
+      const p = PRODUCTS.find(x=>x.id===item.id);
+      if(!p) return;
+      subtotal += p.price * item.qty;
+      const row = document.createElement('div');
+      row.className = 'flex gap-3';
+      row.innerHTML = `
+        <div class="w-16 h-20 rounded overflow-hidden shrink-0"><img src="${ph(p.tone, p.name)}" alt="${p.name}" class="w-full h-full object-cover"></div>
+        <div class="flex-1">
+          <p class="font-archivo font-700 text-sm">${p.name}</p>
+          <p class="text-support text-xs mt-0.5">Talla ${item.size} · Cant. ${item.qty}</p>
+          <p class="font-archivo font-700 text-sm mt-1">${clp(p.price*item.qty)}</p>
+        </div>
+        <button aria-label="Quitar ${p.name} del carro" data-remove="${idx}" class="text-support hover:text-terracotta self-start">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>`;
+      itemsEl.appendChild(row);
+    });
+    itemsEl.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click', ()=>removeFromCart(parseInt(b.dataset.remove))));
+
+    document.getElementById('cart-subtotal').textContent = clp(subtotal);
+    const bar = document.getElementById('shipping-bar');
+    const msg = document.getElementById('shipping-msg');
+    if(subtotal >= FREE_SHIPPING){ bar.style.width='100%'; msg.textContent='¡Envío gratis conseguido!'; }
+    else { bar.style.width = Math.min(100,(subtotal/FREE_SHIPPING)*100)+'%'; msg.textContent = `Te faltan ${clp(FREE_SHIPPING-subtotal)} para envío gratis`; }
+
+    const sugEl = document.getElementById('cart-suggestion');
+    if(cart.length>0){
+      const cartIds = cart.map(i=>i.id);
+      const suggestion = PRODUCTS.find(p=>!cartIds.includes(p.id)) || PRODUCTS[0];
+      sugEl.innerHTML = `
+        <p class="text-xs text-support uppercase font-archivo font-700 mb-2">Súmale esto a tu carro</p>
+        <div class="flex gap-3 items-center">
+          <div class="w-12 h-16 rounded overflow-hidden shrink-0"><img src="${ph(suggestion.tone, suggestion.name)}" alt="${suggestion.name}" class="w-full h-full object-cover"></div>
+          <div class="flex-1"><p class="text-sm font-archivo font-700">${suggestion.name}</p><p class="text-xs text-support">${clp(suggestion.price)}</p></div>
+          <button data-add-suggestion="${suggestion.id}" class="text-xs border border-ink rounded px-3 py-2 font-archivo font-700 uppercase hover:bg-ink hover:text-white transition-colors">Agregar</button>
+        </div>`;
+      sugEl.querySelector('[data-add-suggestion]').addEventListener('click', ()=>addToCart(suggestion.id,'S'));
+    } else sugEl.innerHTML = '';
+  }
+
+  const cartDrawer = document.getElementById('cart-drawer');
+  const cartOverlay = document.getElementById('cart-overlay');
+  function openCart(){ cartDrawer.classList.remove('translate-x-full'); cartOverlay.classList.remove('hidden'); }
+  function closeCart(){ cartDrawer.classList.add('translate-x-full'); cartOverlay.classList.add('hidden'); }
+  document.getElementById('cart-toggle').addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+
+  function handleAddToCart(){
+    if(!selectedSize){
+      document.getElementById('size-warning').classList.remove('hidden');
+      return;
+    }
+    addToCart(product.id, selectedSize);
+  }
+  document.getElementById('add-to-cart-desktop').addEventListener('click', handleAddToCart);
+  document.getElementById('add-to-cart-mobile').addEventListener('click', handleAddToCart);
+
+  renderCart();
+})();
+</script>
+</body>
+</html>

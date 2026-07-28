@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda — Calzas, Petos y Conjuntos Deportivos | Aamaal Fit</title>
+<meta name="description" content="Explora calzas, petos, conjuntos y poleras deportivas Aamaal Fit. Filtra por talla, color y precio. Envío gratis sobre $45.000 y retiro en Temuco.">
+<meta property="og:title" content="Tienda Aamaal Fit — ropa deportiva con calce real">
+<meta property="og:description" content="Filtra por categoría, talla y color entre calzas, petos, conjuntos y poleras deportivas hechas para entrenar.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { base:'#F7F5F2', ink:'#14110F', moss:'#2F3E2F', terracotta:'#C9603F', support:'#8C8580' },
+        fontFamily: { archivo:['Archivo','sans-serif'], inter:['Inter','sans-serif'] },
+        borderRadius: { sm:'4px', DEFAULT:'8px' }
+      }
+    }
+  };
+</script>
+<style>
+  body { font-family:'Inter', sans-serif; background:#F7F5F2; color:#14110F; }
+  h1,h2,h3,h4,.font-archivo { font-family:'Archivo', sans-serif; letter-spacing:-0.02em; }
+  :focus-visible { outline: 3px solid #2F3E2F; outline-offset: 2px; }
+  .no-scrollbar::-webkit-scrollbar{ display:none; }
+  .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
+  .swap-img { transition: opacity 200ms ease; }
+  .prod-card:hover .img-b, .prod-card:focus-within .img-b { opacity:1; }
+  .prod-card:hover .img-a, .prod-card:focus-within .img-a { opacity:0; }
+  .panel { transition: transform 220ms ease; }
+  .fade { transition: opacity 300ms ease; }
+</style>
+</head>
+<body class="antialiased">
+
+<div class="bg-moss text-base text-center text-xs sm:text-sm font-medium py-2 px-4">Envío gratis sobre $45.000 · Retiro gratis en Temuco</div>
+
+<header class="sticky top-0 z-40 bg-base/95 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <button id="menu-toggle" class="lg:hidden p-2 -ml-2" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="index.html" class="font-archivo font-900 text-xl lg:text-2xl tracking-tight uppercase mx-auto lg:mx-0">Aamaal Fit</a>
+      <nav class="hidden lg:flex items-center gap-8 font-archivo font-700 text-sm uppercase" aria-label="Navegación principal">
+        <a href="tienda.html?cat=calzas" class="hover:text-moss transition-colors">Calzas</a>
+        <a href="tienda.html?cat=petos" class="hover:text-moss transition-colors">Petos y Tops</a>
+        <a href="tienda.html?cat=conjuntos" class="hover:text-moss transition-colors">Conjuntos</a>
+        <a href="tienda.html?cat=poleras" class="hover:text-moss transition-colors">Poleras y Polerones</a>
+        <a href="tienda.html?orden=nuevo" class="hover:text-moss transition-colors">Novedades</a>
+      </nav>
+      <div class="flex items-center gap-1 sm:gap-2">
+        <button id="search-toggle" class="p-2" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="search-bar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#14110F" stroke-width="2"/><path d="M21 21l-4-4" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button id="cart-toggle" class="relative p-2" aria-label="Abrir carro de compras" aria-controls="cart-drawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7h13l-1.5 9.5a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 4H2" stroke="#14110F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="#14110F"/><circle cx="17" cy="20" r="1.4" fill="#14110F"/></svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+    <div id="search-bar" class="hidden pb-4">
+      <form role="search" class="flex gap-2" onsubmit="return false;">
+        <label for="search-input" class="sr-only">Buscar productos</label>
+        <input id="search-input" type="search" placeholder="Buscar calzas, petos, conjuntos…" class="flex-1 border border-ink/20 rounded px-4 py-2.5 bg-white focus-visible:outline-moss">
+        <button type="submit" class="bg-moss text-white px-5 rounded font-archivo font-700 text-sm uppercase">Buscar</button>
+      </form>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="lg:hidden hidden border-t border-ink/10 bg-base" aria-label="Navegación móvil">
+    <ul class="px-6 py-4 space-y-1 font-archivo font-700 uppercase text-base">
+      <li><a href="tienda.html?cat=calzas" class="block py-2.5">Calzas</a></li>
+      <li><a href="tienda.html?cat=petos" class="block py-2.5">Petos y Tops</a></li>
+      <li><a href="tienda.html?cat=conjuntos" class="block py-2.5">Conjuntos</a></li>
+      <li><a href="tienda.html?cat=poleras" class="block py-2.5">Poleras y Polerones</a></li>
+      <li><a href="tienda.html?orden=nuevo" class="block py-2.5">Novedades</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+  <div class="mb-8">
+    <h1 id="cat-title" class="font-archivo font-900 uppercase text-3xl sm:text-5xl">Todo el catálogo</h1>
+    <p id="cat-subtitle" class="text-support mt-2 text-lg">Ropa deportiva probada en movimiento: no transparenta y calza de verdad.</p>
+  </div>
+
+  <div class="flex items-center justify-between mb-6 gap-4">
+    <button id="filters-open" class="flex items-center gap-2 border border-ink rounded px-4 py-2.5 font-archivo font-700 uppercase text-sm lg:hidden" aria-controls="filters-panel" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+      Filtrar
+    </button>
+    <p id="results-count" class="text-support text-sm hidden lg:block"></p>
+    <label class="ml-auto flex items-center gap-2 text-sm">
+      <span class="hidden sm:inline font-archivo font-700 uppercase text-xs">Ordenar</span>
+      <select id="sort-select" class="border border-ink/20 rounded px-3 py-2.5 bg-white text-sm focus-visible:outline-moss" aria-label="Ordenar por">
+        <option value="relevancia">Relevancia</option>
+        <option value="nuevo">Novedades</option>
+        <option value="menor">Menor precio</option>
+        <option value="mayor">Mayor precio</option>
+        <option value="rating">Mejor calificado</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="grid lg:grid-cols-[220px_1fr] gap-8">
+    <!-- FILTROS DESKTOP / PANEL MÓVIL -->
+    <div id="filters-overlay" class="hidden fixed inset-0 bg-ink/50 z-50 lg:hidden"></div>
+    <aside id="filters-panel" class="panel fixed lg:static top-0 left-0 h-full lg:h-auto w-[85vw] max-w-xs lg:max-w-none lg:w-auto bg-base z-50 lg:z-auto -translate-x-full lg:translate-x-0 overflow-y-auto lg:overflow-visible p-6 lg:p-0" aria-label="Filtros de productos">
+      <div class="flex items-center justify-between mb-6 lg:hidden">
+        <h2 class="font-archivo font-800 uppercase text-lg">Filtros</h2>
+        <button id="filters-close" aria-label="Cerrar filtros" class="p-1">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <fieldset class="mb-7">
+        <legend class="font-archivo font-700 uppercase text-sm mb-3">Categoría</legend>
+        <div class="space-y-2 text-sm" id="filter-cat">
+          <label class="flex items-center gap-2"><input type="radio" name="cat" value="" checked> Todas</label>
+          <label class="flex items-center gap-2"><input type="radio" name="cat" value="calzas"> Calzas</label>
+          <label class="flex items-center gap-2"><input type="radio" name="cat" value="petos"> Petos y Tops</label>
+          <label class="flex items-center gap-2"><input type="radio" name="cat" value="conjuntos"> Conjuntos</label>
+          <label class="flex items-center gap-2"><input type="radio" name="cat" value="poleras"> Poleras y Polerones</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-7">
+        <legend class="font-archivo font-700 uppercase text-sm mb-3">Talla</legend>
+        <div class="flex gap-2" id="filter-size">
+          <label class="cursor-pointer">
+            <input type="checkbox" value="S" class="sr-only peer">
+            <span class="flex items-center justify-center w-11 h-11 border border-ink/30 rounded peer-checked:bg-ink peer-checked:text-white text-sm font-archivo font-700">S</span>
+          </label>
+          <label class="cursor-pointer">
+            <input type="checkbox" value="M" class="sr-only peer">
+            <span class="flex items-center justify-center w-11 h-11 border border-ink/30 rounded peer-checked:bg-ink peer-checked:text-white text-sm font-archivo font-700">M</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-7">
+        <legend class="font-archivo font-700 uppercase text-sm mb-3">Color</legend>
+        <div class="flex flex-wrap gap-2" id="filter-color"></div>
+      </fieldset>
+
+      <fieldset class="mb-7">
+        <legend class="font-archivo font-700 uppercase text-sm mb-3">Precio</legend>
+        <div class="space-y-2 text-sm" id="filter-price">
+          <label class="flex items-center gap-2"><input type="radio" name="price" value="" checked> Todos</label>
+          <label class="flex items-center gap-2"><input type="radio" name="price" value="0-15000"> Hasta $15.000</label>
+          <label class="flex items-center gap-2"><input type="radio" name="price" value="15000-25000"> $15.000 – $25.000</label>
+          <label class="flex items-center gap-2"><input type="radio" name="price" value="25000-999999"> Sobre $25.000</label>
+        </div>
+      </fieldset>
+
+      <button id="filters-clear" class="w-full border border-ink rounded py-3 font-archivo font-700 uppercase text-sm hover:bg-ink hover:text-white transition-colors">Limpiar filtros</button>
+      <button id="filters-apply" class="w-full bg-moss text-white rounded py-3 font-archivo font-700 uppercase text-sm mt-2 lg:hidden">Ver resultados</button>
+    </aside>
+
+    <div>
+      <div id="empty-state" class="hidden text-center py-24">
+        <p class="font-archivo font-800 uppercase text-2xl mb-2">Sin resultados</p>
+        <p class="text-support mb-6">No encontramos prendas con esa combinación de filtros. Prueba ajustando la talla o el color.</p>
+        <button id="empty-clear" class="bg-ink text-white font-archivo font-700 uppercase text-sm px-8 py-4 rounded hover:bg-moss transition-colors">Quitar filtros</button>
+      </div>
+      <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" aria-live="polite"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="border-t border-ink/10 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <p class="font-archivo font-900 uppercase text-lg mb-4">Aamaal Fit</p>
+      <p class="text-support text-sm">Ropa deportiva femenina con calce real, hecha para entrenar en Chile. Av. Alemania 01665, Local 2, Temuco.</p>
+    </div>
+    <div>
+      <p class="font-archivo font-700 uppercase text-sm mb-4">Navegación</p>
+      <ul class="space-y-2 text-support text-sm">
+        <li><a href="tienda.html?cat=calzas" class="hover:text-ink">Calzas</a></li>
+        <li><a href="tienda.html?cat=petos" class="hover:text-ink">Petos y Tops</a></li>
+        <li><a href="tienda.html?cat=conjuntos" class="hover:text-ink">Conjuntos</a></li>
+        <li><a href="tienda.html?cat=poleras" class="hover:text-ink">Poleras y Polerones</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-archivo font-700 uppercase text-sm mb-4">Ayuda</p>
+      <ul class="space-y-2 text-support text-sm">
+        <li><button data-open-legal="envios" class="hover:text-ink text-left">Envíos</button></li>
+        <li><button data-open-legal="cambios" class="hover:text-ink text-left">Cambios y devoluciones</button></li>
+        <li><button data-open-legal="terminos" class="hover:text-ink text-left">Términos y condiciones</button></li>
+        <li><a href="producto.html?id=1#guia-tallas" class="hover:text-ink">Guía de tallas</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-archivo font-700 uppercase text-sm mb-4">Síguenos</p>
+      <ul class="space-y-2 text-support text-sm">
+        <li><a href="https://www.instagram.com/aamaalfit/" target="_blank" rel="noopener" class="hover:text-ink">Instagram</a></li>
+        <li><a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="hover:text-ink">WhatsApp</a></li>
+      </ul>
+      <p class="font-archivo font-700 uppercase text-sm mt-6 mb-2">Medios de pago</p>
+      <p class="text-support text-sm">Webpay · Tarjetas de crédito y débito · Transferencia</p>
+    </div>
+  </div>
+  <div class="border-t border-ink/10 py-6 text-center text-support text-xs"><p>© 2026 Aamaal Fit. Temuco, Chile.</p></div>
+</footer>
+
+<div id="legal-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-ink/60">
+  <div class="bg-base rounded max-w-lg w-full max-h-[80vh] overflow-y-auto p-8 relative" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <button data-close-legal aria-label="Cerrar" class="absolute top-4 right-4 p-1">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <h3 id="legal-title" class="font-archivo font-900 uppercase text-2xl mb-4"></h3>
+    <div id="legal-body" class="text-support space-y-3 text-sm leading-relaxed"></div>
+  </div>
+</div>
+
+<div id="cart-overlay" class="hidden fixed inset-0 bg-ink/50 z-50"></div>
+<aside id="cart-drawer" class="panel fixed top-0 right-0 h-full w-full sm:w-[420px] bg-base z-50 translate-x-full shadow-2xl flex flex-col" aria-label="Carro de compras" role="dialog" aria-modal="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-ink/10">
+    <h2 class="font-archivo font-800 uppercase text-lg">Tu carro</h2>
+    <button id="cart-close" aria-label="Cerrar carro" class="p-1">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#14110F" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="px-6 py-4 border-b border-ink/10">
+    <p id="shipping-msg" class="text-sm font-medium mb-2"></p>
+    <div class="h-2 bg-ink/10 rounded-full overflow-hidden">
+      <div id="shipping-bar" class="h-full bg-moss rounded-full transition-all duration-300" style="width:0%"></div>
+    </div>
+    <p class="text-xs text-support mt-2">También puedes elegir <strong>retiro gratis en tienda (Temuco)</strong> al pagar.</p>
+  </div>
+  <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-4 space-y-4"></div>
+  <div id="cart-suggestion" class="px-6 py-4 border-t border-ink/10"></div>
+  <div class="px-6 py-5 border-t border-ink/10">
+    <div class="flex justify-between font-archivo font-800 text-lg mb-4"><span>Subtotal</span><span id="cart-subtotal">$0</span></div>
+    <a href="tienda.html" class="block text-center bg-moss text-white font-archivo font-700 uppercase text-sm px-8 py-4 rounded hover:bg-[#243024] transition-colors">Ir a pagar</a>
+  </div>
+</aside>
+
+<a href="https://wa.me/56912345678?text=Hola%2C%20tengo%20una%20consulta%20sobre%20Aamaal%20Fit" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="fixed bottom-5 right-5 z-40 bg-moss text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#243024] transition-colors">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" stroke="white" stroke-width="1.6"/><path d="M8.5 8.7c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.1-.3.3-.4.4-.1.1-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.9-.2 1.7-.3.8-1.7 1.5-2.3 1.6-.6.1-1.3.1-2.1-.1-.5-.1-1.1-.3-1.9-.7-3.3-1.4-5.4-4.7-5.6-4.9-.2-.2-1.3-1.7-1.3-3.3 0-1.6.8-2.3 1.1-2.6z" fill="white"/></svg>
+</a>
+
+<script>
+(function(){
+  const FREE_SHIPPING = 45000;
+  const CAT_LABELS = { calzas:'Calzas', petos:'Petos y Tops', conjuntos:'Conjuntos', poleras:'Poleras y Polerones' };
+  const CAT_SUBTITLES = {
+    calzas:'Calzas con recuperación elástica y pretina que no se enrolla.',
+    petos:'Soporte alto para entrenar sin pensar en el peto.',
+    conjuntos:'Peto y calza a juego, con precio de set.',
+    poleras:'Algodón peinado y telas técnicas para el día a día.'
+  };
+
+  const PRODUCTS = [
+    { id:1, name:'Calza Legging Alta Compresión', cat:'calzas', price:24990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'},{n:'Terracota',hex:'#C9603F'}], sizes:{S:true,M:true}, rating:4.8, reviews:126, badge:null, tone:'#2F3E2F', nuevo:false },
+    { id:2, name:'Calza 7/8 Bolsillo Lateral', cat:'calzas', price:26990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Grafito',hex:'#3A3733'}], sizes:{S:true,M:true}, rating:4.7, reviews:98, badge:null, tone:'#3A3733', nuevo:false },
+    { id:3, name:'Peto Deportivo Alto Soporte', cat:'petos', price:15990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Terracota',hex:'#C9603F'},{n:'Beige',hex:'#D8CFC2'}], sizes:{S:true,M:false}, rating:4.9, reviews:210, badge:null, tone:'#C9603F', nuevo:false },
+    { id:4, name:'Top Cruzado Espalda', cat:'petos', price:13990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.6, reviews:64, badge:null, tone:'#8C8580', nuevo:false },
+    { id:5, name:'Conjunto Peto + Calza Esencial', cat:'conjuntos', price:38990, compareAt:42980, colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.9, reviews:150, badge:'MÁS VENDIDO', tone:'#14110F', nuevo:false },
+    { id:6, name:'Polera Técnica Manga Corta', cat:'poleras', price:17990, compareAt:null, colors:[{n:'Hueso',hex:'#D8CFC2'},{n:'Negro',hex:'#14110F'},{n:'Terracota',hex:'#C9603F'}], sizes:{S:false,M:true}, rating:4.5, reviews:40, badge:null, tone:'#8C8580', nuevo:false },
+    { id:7, name:'Polerón Oversize Algodón Peinado', cat:'poleras', price:29990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Gris',hex:'#8C8580'}], sizes:{S:true,M:true}, rating:4.7, reviews:55, badge:'NUEVO', tone:'#3A3733', nuevo:true },
+    { id:8, name:'Calza Flare Retro', cat:'calzas', price:27990, compareAt:null, colors:[{n:'Negro',hex:'#14110F'},{n:'Musgo',hex:'#2F3E2F'}], sizes:{S:true,M:true}, rating:4.8, reviews:77, badge:'NUEVO', tone:'#2F3E2F', nuevo:true }
+  ];
+
+  function ph(bg, label){
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="${bg}"/><text x="150" y="200" font-family="Inter, sans-serif" font-size="14" fill="#F7F5F2" text-anchor="middle" opacity="0.85">${label}</text></svg>`;
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  }
+  function clp(n){ return '$' + n.toLocaleString('es-CL'); }
+
+  const allColors = [...new Map(PRODUCTS.flatMap(p=>p.colors).map(c=>[c.n,c])).values()];
+  const colorFilterEl = document.getElementById('filter-color');
+  colorFilterEl.innerHTML = allColors.map(c=>`
+    <label class="cursor-pointer" title="${c.n}">
+      <input type="checkbox" value="${c.n}" class="sr-only peer">
+      <span class="block w-8 h-8 rounded-full border-2 border-transparent peer-checked:border-ink" style="background:${c.hex}" aria-label="${c.n}"></span>
+    </label>`).join('');
+
+  const params = new URLSearchParams(location.search);
+  const state = {
+    cat: params.get('cat') || '',
+    sizes: [],
+    colors: [],
+    price: '',
+    sort: params.get('orden') === 'nuevo' ? 'nuevo' : 'relevancia'
+  };
+
+  if(state.cat){
+    const radio = document.querySelector(`input[name="cat"][value="${state.cat}"]`);
+    if(radio) radio.checked = true;
+    document.getElementById('cat-title').textContent = CAT_LABELS[state.cat] || 'Todo el catálogo';
+    document.getElementById('cat-subtitle').textContent = CAT_SUBTITLES[state.cat] || '';
+  }
+  if(state.sort === 'nuevo'){
+    document.getElementById('sort-select').value = 'nuevo';
+    document.getElementById('cat-title').textContent = 'Novedades';
+    document.getElementById('cat-subtitle').textContent = 'Lo último que sumamos a la tienda.';
+  }
+
+  function productCard(p){
+    const el = document.createElement('article');
+    el.className = 'prod-card';
+    el.innerHTML = `
+      <a href="producto.html?id=${p.id}" class="block relative aspect-[3/4] rounded overflow-hidden bg-support/20">
+        ${p.badge ? `<span class="absolute top-3 left-3 z-10 bg-terracotta text-white text-[10px] font-archivo font-700 uppercase px-2 py-1 rounded">${p.badge}</span>` : ''}
+        <img class="swap-img img-a absolute inset-0 w-full h-full object-cover" src="${ph(p.tone, p.name)}" alt="${p.name}, color ${p.colors[0].n}, vista de producto">
+        <img class="swap-img img-b absolute inset-0 w-full h-full object-cover opacity-0" src="${ph('#14110F', p.name + ' en movimiento')}" alt="${p.name} puesta en modelo en movimiento">
+      </a>
+      <div class="mt-3">
+        <a href="producto.html?id=${p.id}" class="font-archivo font-700 text-sm uppercase leading-snug block hover:text-moss">${p.name}</a>
+        <div class="flex items-center gap-2 mt-1">
+          <span class="font-archivo font-800">${clp(p.price)}</span>
+          ${p.compareAt ? `<span class="text-support line-through text-sm">${clp(p.compareAt)}</span>` : ''}
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <div class="flex gap-1.5" aria-label="Colores disponibles: ${p.colors.map(c=>c.n).join(', ')}">
+            ${p.colors.map(c=>`<span class="w-4 h-4 rounded-full border border-ink/20" style="background:${c.hex}"></span>`).join('')}
+          </div>
+          <span class="text-xs text-support flex items-center gap-1"><span class="text-terracotta">★</span>${p.rating} (${p.reviews})</span>
+        </div>
+        <button type="button" data-quickbuy="${p.id}" class="mt-3 w-full border border-ink rounded py-2.5 text-xs font-archivo font-700 uppercase hover:bg-ink hover:text-white transition-colors">Agregar</button>
+      </div>`;
+    return el;
+  }
+
+  function applyFilters(){
+    let list = PRODUCTS.slice();
+    if(state.cat) list = list.filter(p=>p.cat===state.cat);
+    if(state.sizes.length) list = list.filter(p=>state.sizes.some(s=>p.sizes[s]));
+    if(state.colors.length) list = list.filter(p=>p.colors.some(c=>state.colors.includes(c.n)));
+    if(state.price){
+      const [min,max] = state.price.split('-').map(Number);
+      list = list.filter(p=>p.price>=min && p.price<=max);
+    }
+    if(state.sort==='menor') list.sort((a,b)=>a.price-b.price);
+    else if(state.sort==='mayor') list.sort((a,b)=>b.price-a.price);
+    else if(state.sort==='rating') list.sort((a,b)=>b.rating-a.rating);
+    else if(state.sort==='nuevo') list = list.filter(p=>p.nuevo);
+
+    const grid = document.getElementById('product-grid');
+    const empty = document.getElementById('empty-state');
+    grid.innerHTML = '';
+    if(list.length === 0){
+      empty.classList.remove('hidden');
+      grid.classList.add('hidden');
+    } else {
+      empty.classList.add('hidden');
+      grid.classList.remove('hidden');
+      grid.append(...list.map(productCard));
+    }
+    document.getElementById('results-count').textContent = `${list.length} producto${list.length===1?'':'s'}`;
+  }
+
+  document.querySelectorAll('input[name="cat"]').forEach(r=>r.addEventListener('change', ()=>{
+    state.cat = r.value;
+    document.getElementById('cat-title').textContent = r.value ? CAT_LABELS[r.value] : 'Todo el catálogo';
+    document.getElementById('cat-subtitle').textContent = r.value ? CAT_SUBTITLES[r.value] : 'Ropa deportiva probada en movimiento: no transparenta y calza de verdad.';
+    applyFilters();
+  }));
+  document.querySelectorAll('#filter-size input').forEach(cb=>cb.addEventListener('change', ()=>{
+    state.sizes = [...document.querySelectorAll('#filter-size input:checked')].map(i=>i.value);
+    applyFilters();
+  }));
+  colorFilterEl.addEventListener('change', ()=>{
+    state.colors = [...colorFilterEl.querySelectorAll('input:checked')].map(i=>i.value);
+    applyFilters();
+  });
+  document.querySelectorAll('input[name="price"]').forEach(r=>r.addEventListener('change', ()=>{
+    state.price = r.value; applyFilters();
+  }));
+  document.getElementById('sort-select').addEventListener('change', (e)=>{
+    state.sort = e.target.value;
+    document.getElementById('cat-title').textContent = state.sort === 'nuevo' ? 'Novedades' : (state.cat ? CAT_LABELS[state.cat] : 'Todo el catálogo');
+    applyFilters();
+  });
+
+  function clearFilters(){
+    state.cat=''; state.sizes=[]; state.colors=[]; state.price=''; state.sort='relevancia';
+    document.querySelector('input[name="cat"][value=""]').checked = true;
+    document.querySelectorAll('#filter-size input').forEach(i=>i.checked=false);
+    colorFilterEl.querySelectorAll('input').forEach(i=>i.checked=false);
+    document.querySelector('input[name="price"][value=""]').checked = true;
+    document.getElementById('sort-select').value = 'relevancia';
+    document.getElementById('cat-title').textContent = 'Todo el catálogo';
+    document.getElementById('cat-subtitle').textContent = 'Ropa deportiva probada en movimiento: no transparenta y calza de verdad.';
+    applyFilters();
+  }
+  document.getElementById('filters-clear').addEventListener('click', clearFilters);
+  document.getElementById('empty-clear').addEventListener('click', clearFilters);
+
+  applyFilters();
+
+  /* ---------- FILTERS PANEL (mobile) ---------- */
+  const filtersPanel = document.getElementById('filters-panel');
+  const filtersOverlay = document.getElementById('filters-overlay');
+  const filtersOpenBtn = document.getElementById('filters-open');
+  function openFilters(){
+    filtersPanel.classList.remove('-translate-x-full');
+    filtersOverlay.classList.remove('hidden');
+    filtersOpenBtn.setAttribute('aria-expanded','true');
+  }
+  function closeFilters(){
+    filtersPanel.classList.add('-translate-x-full');
+    filtersOverlay.classList.add('hidden');
+    filtersOpenBtn.setAttribute('aria-expanded','false');
+  }
+  filtersOpenBtn.addEventListener('click', openFilters);
+  document.getElementById('filters-close').addEventListener('click', closeFilters);
+  document.getElementById('filters-apply').addEventListener('click', closeFilters);
+  filtersOverlay.addEventListener('click', closeFilters);
+
+  /* ---------- MENU / BÚSQUEDA ---------- */
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  menuToggle.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('hidden') === false;
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  const searchToggle = document.getElementById('search-toggle');
+  const searchBar = document.getElementById('search-bar');
+  searchToggle.addEventListener('click', ()=>{
+    const open = searchBar.classList.toggle('hidden') === false;
+    searchToggle.setAttribute('aria-expanded', open);
+    if(open) document.getElementById('search-input').focus();
+  });
+
+  /* ---------- LEGAL MODAL ---------- */
+  const legalContent = {
+    envios: ['Envíos', `<p>Despachamos a todo Chile a través de courier con seguimiento.</p><p><strong>Envío gratis</strong> en compras sobre $45.000. Bajo ese monto, el costo se calcula según tu comuna al finalizar la compra.</p><p>Plazo estimado: 2 a 4 días hábiles en la Región de La Araucanía, 3 a 7 días hábiles en el resto del país.</p><p>También puedes elegir <strong>retiro gratis</strong> en nuestra tienda de Av. Alemania 01665, Local 2, Temuco.</p>`],
+    cambios: ['Cambios y devoluciones', `<p>Tienes <strong>10 días corridos</strong> desde que recibes tu pedido para solicitar un cambio de talla o color.</p><p>La prenda debe estar sin uso, con etiquetas y en su empaque original.</p><p>Puedes hacer el cambio directo en nuestra tienda de Temuco o coordinando el retiro por WhatsApp.</p>`],
+    terminos: ['Términos y condiciones', `<p>Los precios publicados están expresados en pesos chilenos e incluyen IVA.</p><p>Las imágenes de este sitio son representativas del producto; el color puede variar levemente según la pantalla.</p><p>Aamaal Fit se reserva el derecho de actualizar stock y precios sin previo aviso.</p>`]
+  };
+  const legalModal = document.getElementById('legal-modal');
+  document.querySelectorAll('[data-open-legal]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const [title, body] = legalContent[btn.dataset.openLegal];
+      document.getElementById('legal-title').textContent = title;
+      document.getElementById('legal-body').innerHTML = body;
+      legalModal.classList.remove('hidden'); legalModal.classList.add('flex');
+    });
+  });
+  document.querySelectorAll('[data-close-legal]').forEach(b=>b.addEventListener('click', ()=>{ legalModal.classList.add('hidden'); legalModal.classList.remove('flex'); }));
+  legalModal.addEventListener('click', e=>{ if(e.target===legalModal){ legalModal.classList.add('hidden'); legalModal.classList.remove('flex'); }});
+
+  /* ---------- CART ---------- */
+  const CART_KEY = 'aamaal_cart';
+  function getCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
+  function setCart(c){ localStorage.setItem(CART_KEY, JSON.stringify(c)); renderCart(); }
+  function addToCart(id, size){
+    const cart = getCart();
+    const existing = cart.find(i=>i.id===id && i.size===size);
+    if(existing) existing.qty += 1; else cart.push({id, size, qty:1});
+    setCart(cart);
+    openCart();
+  }
+  function removeFromCart(idx){ const cart = getCart(); cart.splice(idx,1); setCart(cart); }
+
+  function renderCart(){
+    const cart = getCart();
+    const itemsEl = document.getElementById('cart-items');
+    document.getElementById('cart-count').textContent = cart.reduce((a,i)=>a+i.qty,0);
+    let subtotal = 0;
+    itemsEl.innerHTML = '';
+    if(cart.length===0){
+      itemsEl.innerHTML = `<p class="text-support text-center py-10">Tu carro está vacío.<br><a href="tienda.html" class="text-moss underline">Ver la tienda</a></p>`;
+    }
+    cart.forEach((item, idx)=>{
+      const p = PRODUCTS.find(x=>x.id===item.id);
+      if(!p) return;
+      subtotal += p.price * item.qty;
+      const row = document.createElement('div');
+      row.className = 'flex gap-3';
+      row.innerHTML = `
+        <div class="w-16 h-20 rounded overflow-hidden shrink-0"><img src="${ph(p.tone, p.name)}" alt="${p.name}" class="w-full h-full object-cover"></div>
+        <div class="flex-1">
+          <p class="font-archivo font-700 text-sm">${p.name}</p>
+          <p class="text-support text-xs mt-0.5">Talla ${item.size} · Cant. ${item.qty}</p>
+          <p class="font-archivo font-700 text-sm mt-1">${clp(p.price*item.qty)}</p>
+        </div>
+        <button aria-label="Quitar ${p.name} del carro" data-remove="${idx}" class="text-support hover:text-terracotta self-start">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>`;
+      itemsEl.appendChild(row);
+    });
+    itemsEl.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click', ()=>removeFromCart(parseInt(b.dataset.remove))));
+
+    document.getElementById('cart-subtotal').textContent = clp(subtotal);
+    const bar = document.getElementById('shipping-bar');
+    const msg = document.getElementById('shipping-msg');
+    if(subtotal >= FREE_SHIPPING){ bar.style.width='100%'; msg.textContent='¡Envío gratis conseguido!'; }
+    else { bar.style.width = Math.min(100,(subtotal/FREE_SHIPPING)*100)+'%'; msg.textContent = `Te faltan ${clp(FREE_SHIPPING-subtotal)} para envío gratis`; }
+
+    const sugEl = document.getElementById('cart-suggestion');
+    if(cart.length>0){
+      const cartIds = cart.map(i=>i.id);
+      const suggestion = PRODUCTS.find(p=>!cartIds.includes(p.id)) || PRODUCTS[0];
+      sugEl.innerHTML = `
+        <p class="text-xs text-support uppercase font-archivo font-700 mb-2">Súmale esto a tu carro</p>
+        <div class="flex gap-3 items-center">
+          <div class="w-12 h-16 rounded overflow-hidden shrink-0"><img src="${ph(suggestion.tone, suggestion.name)}" alt="${suggestion.name}" class="w-full h-full object-cover"></div>
+          <div class="flex-1"><p class="text-sm font-archivo font-700">${suggestion.name}</p><p class="text-xs text-support">${clp(suggestion.price)}</p></div>
+          <button data-add-suggestion="${suggestion.id}" class="text-xs border border-ink rounded px-3 py-2 font-archivo font-700 uppercase hover:bg-ink hover:text-white transition-colors">Agregar</button>
+        </div>`;
+      sugEl.querySelector('[data-add-suggestion]').addEventListener('click', ()=>addToCart(suggestion.id,'S'));
+    } else sugEl.innerHTML = '';
+  }
+
+  const cartDrawer = document.getElementById('cart-drawer');
+  const cartOverlay = document.getElementById('cart-overlay');
+  function openCart(){ cartDrawer.classList.remove('translate-x-full'); cartOverlay.classList.remove('hidden'); }
+  function closeCart(){ cartDrawer.classList.add('translate-x-full'); cartOverlay.classList.add('hidden'); }
+  document.getElementById('cart-toggle').addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+
+  document.body.addEventListener('click', (e)=>{
+    const btn = e.target.closest('[data-quickbuy]');
+    if(!btn) return;
+    const p = PRODUCTS.find(x=>x.id===parseInt(btn.dataset.quickbuy));
+    if(!p) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'flex gap-2 mt-2';
+    const sizes = Object.keys(p.sizes);
+    wrap.innerHTML = sizes.map(s=>`<button data-pick-size="${p.id}|${s}" ${!p.sizes[s] ? 'disabled' : ''} class="flex-1 border ${p.sizes[s] ? 'border-ink hover:bg-ink hover:text-white' : 'border-ink/20 text-support line-through cursor-not-allowed'} rounded py-2 text-xs font-archivo font-700 uppercase transition-colors">${s}</button>`).join('');
+    btn.replaceWith(wrap);
+  });
+  document.body.addEventListener('click', (e)=>{
+    const b = e.target.closest('[data-pick-size]');
+    if(!b) return;
+    const [id,size] = b.dataset.pickSize.split('|');
+    addToCart(parseInt(id), size);
+  });
+
+  renderCart();
+})();
+</script>
+</body>
+</html>
